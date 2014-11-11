@@ -29,22 +29,20 @@ public class Rect implements Shape{
         p.down();
         p.setDirection(0);
         p.move(width);
-        p.turn(90);
+        p.turn(-90);
         p.move(height);
-        p.turn(90);
+        p.turn(-90);
         p.move(width);
-        p.turn(90);
+        p.turn(-90);
         p.move(height);
     }
 
-    @Override
     public double getXPos() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return xPos;
     }
 
-    @Override
     public double getYPos() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return yPos;
     }
 
     public void move(double xLoc, double yLoc) {
@@ -61,6 +59,7 @@ public class Rect implements Shape{
         String str = "This is a CIRCLE\n";
         str += "XLOC: " + xPos + "\tYLOC: " + yPos + "\n";
         str += "Width: " + width + "Height: " + height;
+        str += "Area: " + area();
         return str;
     }
         

@@ -38,6 +38,7 @@ public class ShapeMaker {
         s2.draw(p);
         */
         
+        /*
         Pen p = new StandardPen(new SketchPadWindow(400,400));
         Shape s1 = null;
         double r, x, y;
@@ -74,6 +75,9 @@ public class ShapeMaker {
             p.setColor(Color.blue);
             s1.draw(p);
         }
+                */
+        
+        
     }
     
 }

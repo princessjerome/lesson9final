@@ -1,19 +1,16 @@
-
 import TurtleGraphics.Pen;
 
-public class Circle implements Shape{
+public class Circle extends AbstractShape{
 
-    private double xPos, yPos, radius;
+    protected double radius;
     
     public Circle(){
-        xPos=0;
-        yPos=0;
+        super();
         radius=1;
     }
     
     public Circle(double x,double y, double r){
-        xPos = x;
-        yPos = y;
+        super(x,y);
         radius = r;
     }
     
@@ -33,28 +30,16 @@ public class Circle implements Shape{
             p.turn(3);
         }
     }
-
-    public double getXPos() {
-        return xPos;
-    }
-
-    public double getYPos() {
-        return yPos;
-    }
-
-    public void move(double xLoc, double yLoc) {
-        xPos = xLoc;
-        yPos = yLoc;
-    }
     
     public void stretchBy(double factor) {
         radius *= factor;
     }
     
     public String toString(){
-        String str = "This is a CIRCLE\n";
-        str += "XLOC: " + xPos + "\tYLOC: " + yPos + "\n";
-        str += "RADIUS: " + radius + "\nAREA: " + area();
+        String str = "This is a circle\n";
+        str += "Radius: " + radius;
+        str += "\n" + super.toString();        
         return str;
     }
+    
 }

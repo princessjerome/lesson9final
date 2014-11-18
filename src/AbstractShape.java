@@ -1,6 +1,6 @@
 import TurtleGraphics.Pen;
 
-abstract public class AbstractShape implements Shape{
+abstract public class AbstractShape{
     
     protected double xPos, yPos;
     
@@ -17,6 +17,7 @@ abstract public class AbstractShape implements Shape{
     abstract public double area();
     abstract public void draw(Pen p);
     abstract public void stretchBy(double fact);
+    abstract public double perimeter();
     
     public final double getxPos(){
         return xPos;
@@ -26,7 +27,7 @@ abstract public class AbstractShape implements Shape{
         return yPos;
     }
     
-    public final void move(double xLoc, double yLoc){
+    public void move(double xLoc, double yLoc){
         xPos = xLoc;
         yPos = yLoc;
     }
@@ -34,6 +35,7 @@ abstract public class AbstractShape implements Shape{
     public String toString(){
         String str = "X-Y Position= " + xPos + ", " + yPos;
         str += "\nArea = " + area();
+        str += "\nPerimeter = " + perimeter();
         return str;
     }
 }

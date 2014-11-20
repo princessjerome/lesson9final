@@ -10,7 +10,7 @@ AbstractShape s;
     public SGUI() {
         initComponents();
         SketchPadWindow w = new SketchPadWindow(400,400);
-        w.setLocation(50,25);
+        w.setLocation(40,255);
         p = new StandardPen(w);
         s = new Circle(0,0,0);
     }
@@ -51,10 +51,25 @@ AbstractShape s;
         });
 
         btnwheel.setText("Wheel");
+        btnwheel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnwheelActionPerformed(evt);
+            }
+        });
 
         btnrect.setText("Rectangle");
+        btnrect.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnrectActionPerformed(evt);
+            }
+        });
 
         btntriangle.setText("Triangle");
+        btntriangle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btntriangleActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -176,6 +191,7 @@ AbstractShape s;
         p.setColor(Color.white);
         s.draw(p);
         txtinfo.setText(s.toString());
+        p.setColor(Color.blue);
     }
     
     private void btncircleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncircleActionPerformed
@@ -193,6 +209,27 @@ AbstractShape s;
         s.draw(p);
         txtinfo.setText(s.toString());
     }//GEN-LAST:event_btnMoveActionPerformed
+
+    private void btntriangleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btntriangleActionPerformed
+        erase();
+        s = new Triangle();
+        s.draw(p);
+        txtinfo.setText(s.toString());
+    }//GEN-LAST:event_btntriangleActionPerformed
+
+    private void btnrectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnrectActionPerformed
+        erase();
+        s = new Rect(0,0,50,25);
+        s.draw(p);
+        txtinfo.setText(s.toString());
+    }//GEN-LAST:event_btnrectActionPerformed
+
+    private void btnwheelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnwheelActionPerformed
+        erase();
+        s = new Wheel(0,0,50,6);
+        s.draw(p);
+        txtinfo.setText(s.toString());
+    }//GEN-LAST:event_btnwheelActionPerformed
 
     /**
      * @param args the command line arguments

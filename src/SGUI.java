@@ -114,6 +114,11 @@ AbstractShape s;
         });
 
         btnResize.setText("Resize");
+        btnResize.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnResizeActionPerformed(evt);
+            }
+        });
 
         btnquit.setText("Quit");
 
@@ -230,6 +235,14 @@ AbstractShape s;
         s.draw(p);
         txtinfo.setText(s.toString());
     }//GEN-LAST:event_btnwheelActionPerformed
+
+    private void btnResizeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResizeActionPerformed
+        double a = Double.parseDouble(JOptionPane.showInputDialog(this, "Enter new stretch factor", "0"));
+        erase();
+        s.stretchBy(a);
+        s.draw(p);
+        txtinfo.setText(s.toString());
+    }//GEN-LAST:event_btnResizeActionPerformed
 
     /**
      * @param args the command line arguments

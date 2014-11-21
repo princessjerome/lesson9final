@@ -17,12 +17,14 @@ public class Triangle extends AbstractShape{
     }
 
     public void move(double xLoc, double yLoc){
+        double xd = xLoc - xPos;
+        double yd = yLoc - yPos;
         xPos = xLoc;
         yPos = yLoc;
-        x2 = x2 + xLoc;
-        y2 = y2 + yLoc;
-        x3 = x3 + xLoc;
-        y3 = y3 + yLoc;
+        x2 = x2 + xd;
+        y2 = y2 + yd;
+        x3 = x3 + xd;
+        y3 = y3 + yd;
     }    
     
     public void draw(Pen p) {
@@ -34,8 +36,11 @@ public class Triangle extends AbstractShape{
         p.move(xPos,yPos);
     }
 
-    public void stretchBy(double fact) {
-        
+    public void stretchBy(double factor) {
+        x2 = (x2-xPos)*factor;
+        y2 = (y2-yPos)*factor;
+        x3 = (x3-xPos)*factor;
+        y3 = (y3-yPos)*factor;
     }
 
     public double perimeter() {

@@ -121,6 +121,11 @@ AbstractShape s;
         });
 
         btnquit.setText("Quit");
+        btnquit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnquitActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -243,6 +248,10 @@ AbstractShape s;
         s.draw(p);
         txtinfo.setText(s.toString());
     }//GEN-LAST:event_btnResizeActionPerformed
+
+    private void btnquitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnquitActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btnquitActionPerformed
 
     /**
      * @param args the command line arguments

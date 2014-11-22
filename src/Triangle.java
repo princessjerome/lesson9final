@@ -2,7 +2,8 @@ import TurtleGraphics.*;
 
 public class Triangle extends AbstractShape{
     private double x2 , y2, x3, y3;
-    
+    private double xd, yd;
+        
     public Triangle()
     {
         super();
@@ -10,6 +11,8 @@ public class Triangle extends AbstractShape{
         y2 = 50;
         x3 = 100;
         y3 = 0;
+        xd = 0;
+        yd = 0;
     }
     
     public double area() {
@@ -17,8 +20,8 @@ public class Triangle extends AbstractShape{
     }
 
     public void move(double xLoc, double yLoc){
-        double xd = xLoc - xPos;
-        double yd = yLoc - yPos;
+        xd = xLoc - xPos;
+        yd = yLoc - yPos;
         xPos = xLoc;
         yPos = yLoc;
         x2 = x2 + xd;
@@ -37,10 +40,10 @@ public class Triangle extends AbstractShape{
     }
 
     public void stretchBy(double factor) {
-        x2 = (x2-xPos)*factor;
-        y2 = (y2-yPos)*factor;
-        x3 = (x3-xPos)*factor;
-        y3 = (y3-yPos)*factor;
+        x2 = (x2-xPos)*factor + xd;
+        y2 = (y2-yPos)*factor + yd;
+        x3 = (x3-xPos)*factor + xd;
+        y3 = (y3-yPos)*factor + yd;
     }
 
     public double perimeter() {

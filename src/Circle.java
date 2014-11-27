@@ -35,6 +35,10 @@ public class Circle extends AbstractShape{
         }
     }
     
+    public void setSpokes(){
+        
+    }
+    
     public void stretchBy(double factor) {
         radius *= factor;
     }

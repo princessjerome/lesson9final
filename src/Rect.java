@@ -45,7 +45,7 @@ public class Rect extends AbstractShape{
     
     public String toString(){
         String str = "Rectangle\n";
-        str += "Width = " + width + "\tHeight = " + height;
+        str += "Width: " + width + "\tHeight: " + height;
         str += "\n" + super.toString();
         return str;
     }

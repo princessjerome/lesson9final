@@ -10,7 +10,7 @@ AbstractShape s;
     public SGUI() {
         initComponents();
         SketchPadWindow w = new SketchPadWindow(400,400);
-        w.setLocation(40,255);
+        w.setLocation(0,270);
         p = new StandardPen(w);
         s = new Circle(0,0,0);
     }
@@ -236,7 +236,9 @@ AbstractShape s;
 
     private void btnwheelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnwheelActionPerformed
         erase();
-        s = new Wheel(0,0,50,6);
+        int spk;
+        spk = Integer.parseInt(JOptionPane.showInputDialog(this, "How many spokes would you like?"));
+        s = new Wheel(0,0,50,spk);
         s.draw(p);
         txtinfo.setText(s.toString());
     }//GEN-LAST:event_btnwheelActionPerformed

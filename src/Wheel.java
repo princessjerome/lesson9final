@@ -24,10 +24,6 @@ public class Wheel extends Circle{
         }
     }
     
-    public void setSpokes (int s){
-        spokes = s;
-    }
-    
     public String toString(){
         String str = "Wheel\n";
         str += "Radius: " + radius + "\n";

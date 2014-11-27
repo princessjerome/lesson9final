@@ -2,7 +2,6 @@ import TurtleGraphics.*;
 
 public class Triangle extends AbstractShape{
     private double x2 , y2, x3, y3;
-    private double xd, yd;
         
     public Triangle()
     {
@@ -11,8 +10,6 @@ public class Triangle extends AbstractShape{
         y2 = 50;
         x3 = 100;
         y3 = 0;
-        xd = 0;
-        yd = 0;
     }
     
     public double area() {
@@ -20,6 +17,8 @@ public class Triangle extends AbstractShape{
     }
 
     public void move(double xLoc, double yLoc){
+        double xd = 0;
+        double yd = 0;
         xd = xLoc - xPos;
         yd = yLoc - yPos;
         xPos = xLoc;
@@ -40,14 +39,24 @@ public class Triangle extends AbstractShape{
     }
 
     public void stretchBy(double factor) {
-        x2 = (x2-xPos)*factor + xd;
-        y2 = (y2-yPos)*factor + yd;
-        x3 = (x3-xPos)*factor + xd;
-        y3 = (y3-yPos)*factor + yd;
+        x2 = (x2-xPos)*factor + xPos;
+        y2 = (y2-yPos)*factor + yPos;
+        x3 = (x3-xPos)*factor + xPos;
+        y3 = (y3-yPos)*factor + yPos;
     }
 
     public double perimeter() {
         return Math.sqrt((xPos-x2)*(xPos-x2)+(yPos-y2)*(yPos-y2));
+    }
+    
+    public String toString(){
+        String str = "Triangle\n";
+        str += "X-Y(1): " + xPos + "," + yPos;
+        str += "\nX-Y(2): " + x2 + "," + y2;
+        str += "\nX-Y(3): " + x3 + "," + y3;
+        str += "\nArea: " + area();
+        str += "\nPerimeterL " + perimeter();
+        return str;
     }
     
 }
